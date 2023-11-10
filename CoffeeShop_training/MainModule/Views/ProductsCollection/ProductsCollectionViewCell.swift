@@ -46,40 +46,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
-    private let categoryLabel: UILabel = {
-        let label = UILabel()
-        label.font = .soraSemiBold16()
-        label.textColor = .specialBlack
-        label.text = "Cappucino"
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    //private let categoryLabel = CustomLabel(font: .soraSemiBold16()!, textColor: .specialBlack, text: "Cappucino")
-    
-    private let configurationProductLabel: UILabel = {
-        let label = UILabel()
-        label.font = .soraRegular12()
-        label.textColor = .specialGrey
-        label.text = "with Chocolate"
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let priceLabel: UILabel = {
-        let label = UILabel()
-        label.font = .soraSemiBold18()
-        label.textColor = .specialGreen
-        label.text = "$ 4.53"
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+
+    private let categoryLabel = CustomLabel(font: .soraSemiBold16()!, textColor: .specialBlack, text: "Cappucino")
+    private let configurationProductLabel = CustomLabel(font: .soraRegular12()!, textColor: .specialGrey, text: "with Chocolate")
+    private let priceLabel = CustomLabel(font: .soraSemiBold18()!, textColor: .specialGreen, text: "$ 4.53")
+
     
     private let addButton: UIButton = {
         let btn = UIButton()
