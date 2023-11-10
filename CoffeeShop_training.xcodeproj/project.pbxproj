@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34911E4E2AFE056600351BF8 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34911E4D2AFE056600351BF8 /* CategoryCollectionView.swift */; };
+		34911E502AFE0C3E00351BF8 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34911E4F2AFE0C3E00351BF8 /* CategoryCollectionViewCell.swift */; };
+		34911E542AFE2BC600351BF8 /* ProductsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34911E532AFE2BC600351BF8 /* ProductsCollectionView.swift */; };
+		34911E562AFE2E2600351BF8 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34911E552AFE2E2600351BF8 /* ProductsCollectionViewCell.swift */; };
+		34911E592AFE471700351BF8 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34911E582AFE471700351BF8 /* CustomLabel.swift */; };
 		34CC415E2AFCBB28003CA912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC415D2AFCBB28003CA912 /* AppDelegate.swift */; };
 		34CC41602AFCBB28003CA912 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC415F2AFCBB28003CA912 /* SceneDelegate.swift */; };
 		34CC41622AFCBB28003CA912 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC41612AFCBB28003CA912 /* MainViewController.swift */; };
 		34CC41672AFCBB29003CA912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34CC41662AFCBB29003CA912 /* Assets.xcassets */; };
 		34CC416A2AFCBB29003CA912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34CC41682AFCBB29003CA912 /* LaunchScreen.storyboard */; };
+		34CC41772AFCBDC9003CA912 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC41762AFCBDC9003CA912 /* SearchHeaderView.swift */; };
+		34CC417B2AFCE314003CA912 /* Sora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34CC41792AFCE314003CA912 /* Sora-Regular.ttf */; };
+		34CC417C2AFCE314003CA912 /* Sora-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34CC417A2AFCE314003CA912 /* Sora-SemiBold.ttf */; };
+		34CC417F2AFCE4ED003CA912 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC417E2AFCE4ED003CA912 /* UIFont + Extensions.swift */; };
+		34CC41812AFCE615003CA912 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC41802AFCE615003CA912 /* UIColor + Extensions.swift */; };
+		34CC41832AFCF40E003CA912 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC41822AFCF40E003CA912 /* UIStackView + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34911E4D2AFE056600351BF8 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
+		34911E4F2AFE0C3E00351BF8 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		34911E532AFE2BC600351BF8 /* ProductsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionView.swift; sourceTree = "<group>"; };
+		34911E552AFE2E2600351BF8 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		34911E582AFE471700351BF8 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		34CC415A2AFCBB28003CA912 /* CoffeeShop_training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeShop_training.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CC415D2AFCBB28003CA912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34CC415F2AFCBB28003CA912 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +38,12 @@
 		34CC41662AFCBB29003CA912 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34CC41692AFCBB29003CA912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34CC416B2AFCBB29003CA912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34CC41762AFCBDC9003CA912 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
+		34CC41792AFCE314003CA912 /* Sora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Regular.ttf"; sourceTree = "<group>"; };
+		34CC417A2AFCE314003CA912 /* Sora-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-SemiBold.ttf"; sourceTree = "<group>"; };
+		34CC417E2AFCE4ED003CA912 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		34CC41802AFCE615003CA912 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		34CC41822AFCF40E003CA912 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +57,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34911E512AFE2B3F00351BF8 /* CategoryCollection */ = {
+			isa = PBXGroup;
+			children = (
+				34911E4D2AFE056600351BF8 /* CategoryCollectionView.swift */,
+				34911E4F2AFE0C3E00351BF8 /* CategoryCollectionViewCell.swift */,
+			);
+			path = CategoryCollection;
+			sourceTree = "<group>";
+		};
+		34911E522AFE2BA900351BF8 /* ProductsCollection */ = {
+			isa = PBXGroup;
+			children = (
+				34911E532AFE2BC600351BF8 /* ProductsCollectionView.swift */,
+				34911E552AFE2E2600351BF8 /* ProductsCollectionViewCell.swift */,
+			);
+			path = ProductsCollection;
+			sourceTree = "<group>";
+		};
+		34911E572AFE46FE00351BF8 /* ReusableElements */ = {
+			isa = PBXGroup;
+			children = (
+				34911E582AFE471700351BF8 /* CustomLabel.swift */,
+			);
+			path = ReusableElements;
+			sourceTree = "<group>";
+		};
 		34CC41512AFCBB28003CA912 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +102,79 @@
 		34CC415C2AFCBB28003CA912 /* CoffeeShop_training */ = {
 			isa = PBXGroup;
 			children = (
-				34CC415D2AFCBB28003CA912 /* AppDelegate.swift */,
-				34CC415F2AFCBB28003CA912 /* SceneDelegate.swift */,
-				34CC41612AFCBB28003CA912 /* MainViewController.swift */,
-				34CC41662AFCBB29003CA912 /* Assets.xcassets */,
-				34CC41682AFCBB29003CA912 /* LaunchScreen.storyboard */,
-				34CC416B2AFCBB29003CA912 /* Info.plist */,
+				34CC41712AFCBC13003CA912 /* Application */,
+				34CC41732AFCBC43003CA912 /* MainModule */,
+				34CC417D2AFCE4D0003CA912 /* Extensions */,
+				34CC41722AFCBC2C003CA912 /* SupportingFiles */,
 			);
 			path = CoffeeShop_training;
+			sourceTree = "<group>";
+		};
+		34CC41712AFCBC13003CA912 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				34CC415D2AFCBB28003CA912 /* AppDelegate.swift */,
+				34CC415F2AFCBB28003CA912 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		34CC41722AFCBC2C003CA912 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				34CC41782AFCE2BB003CA912 /* Fonts */,
+				34CC416B2AFCBB29003CA912 /* Info.plist */,
+				34CC41682AFCBB29003CA912 /* LaunchScreen.storyboard */,
+				34CC41662AFCBB29003CA912 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		34CC41732AFCBC43003CA912 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				34CC41752AFCBD84003CA912 /* Views */,
+				34CC41742AFCBD7B003CA912 /* Controllers */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		34CC41742AFCBD7B003CA912 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				34CC41612AFCBB28003CA912 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		34CC41752AFCBD84003CA912 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34911E522AFE2BA900351BF8 /* ProductsCollection */,
+				34911E512AFE2B3F00351BF8 /* CategoryCollection */,
+				34CC41762AFCBDC9003CA912 /* SearchHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34CC41782AFCE2BB003CA912 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				34CC41792AFCE314003CA912 /* Sora-Regular.ttf */,
+				34CC417A2AFCE314003CA912 /* Sora-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		34CC417D2AFCE4D0003CA912 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34911E572AFE46FE00351BF8 /* ReusableElements */,
+				34CC417E2AFCE4ED003CA912 /* UIFont + Extensions.swift */,
+				34CC41802AFCE615003CA912 /* UIColor + Extensions.swift */,
+				34CC41822AFCF40E003CA912 /* UIStackView + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				34CC416A2AFCBB29003CA912 /* LaunchScreen.storyboard in Resources */,
+				34CC417B2AFCE314003CA912 /* Sora-Regular.ttf in Resources */,
+				34CC417C2AFCE314003CA912 /* Sora-SemiBold.ttf in Resources */,
 				34CC41672AFCBB29003CA912 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,9 +249,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34911E4E2AFE056600351BF8 /* CategoryCollectionView.swift in Sources */,
 				34CC41622AFCBB28003CA912 /* MainViewController.swift in Sources */,
 				34CC415E2AFCBB28003CA912 /* AppDelegate.swift in Sources */,
+				34CC41832AFCF40E003CA912 /* UIStackView + Extensions.swift in Sources */,
+				34911E542AFE2BC600351BF8 /* ProductsCollectionView.swift in Sources */,
+				34911E502AFE0C3E00351BF8 /* CategoryCollectionViewCell.swift in Sources */,
+				34CC417F2AFCE4ED003CA912 /* UIFont + Extensions.swift in Sources */,
+				34911E592AFE471700351BF8 /* CustomLabel.swift in Sources */,
+				34CC41812AFCE615003CA912 /* UIColor + Extensions.swift in Sources */,
 				34CC41602AFCBB28003CA912 /* SceneDelegate.swift in Sources */,
+				34911E562AFE2E2600351BF8 /* ProductsCollectionViewCell.swift in Sources */,
+				34CC41772AFCBDC9003CA912 /* SearchHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +406,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5NG3V567GS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoffeeShop_training/Info.plist;
+				INFOPLIST_FILE = CoffeeShop_training/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -314,7 +438,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5NG3V567GS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoffeeShop_training/Info.plist;
+				INFOPLIST_FILE = CoffeeShop_training/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
