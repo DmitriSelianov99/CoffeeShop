@@ -79,12 +79,36 @@ class DetailedInformationViewController: UIViewController {
         separator.translatesAutoresizingMaskIntoConstraints = false
         return separator
     }()
+    
+//MARK: - DESCRIPTION
+    private let descriptionHeaderLabel = CustomLabel(font: .soraSemiBold16()!, textColor: .specialBlack, text: "Description")
+    private let descriptionLabel = CustomLabel(font: .soraRegular14()!, textColor: .specialGrey, text: "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More")
+    
+//MARK: - SIZE
+    private let sizeHeaderLabel = CustomLabel(font: .soraSemiBold16()!, textColor: .specialBlack, text: "Size")
+    private let sizeCollectionView = SizeCollectionView()
+    
+//MARK: - PRICE
+    private let priceLabel = CustomLabel(font: .soraRegular14()!, textColor: .specialGrey, text: "Price")
+    private let totalPriceLabel = CustomLabel(font: .soraSemiBold18()!, textColor: .specialOrange, text: "$ 4.53")
+    private var priceStackView = UIStackView()
+    private let buyButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .specialOrange
+        btn.layer.cornerRadius = 16
+        btn.setAttributedTitle(NSAttributedString(
+            string: "Buy Now",
+            attributes: [NSAttributedString.Key.foregroundColor : UIColor.white]),
+                               for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
+    
         setupViews()
         setConstraints()
     }
@@ -107,6 +131,17 @@ class DetailedInformationViewController: UIViewController {
         view.addSubview(buttonsStackView)
         
         view.addSubview(separatorView)
+        
+        view.addSubview(descriptionHeaderLabel)
+        descriptionLabel.numberOfLines = 3
+        view.addSubview(descriptionLabel)
+        
+        view.addSubview(sizeHeaderLabel)
+        view.addSubview(sizeCollectionView)
+        
+        priceStackView = UIStackView(arrangedSubviews: [priceLabel, totalPriceLabel], axis: .vertical, spacing: 8)
+        view.addSubview(priceStackView)
+        view.addSubview(buyButton)
                 
     }
 }
@@ -137,6 +172,32 @@ extension DetailedInformationViewController {
             separatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             separatorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             separatorView.heightAnchor.constraint(equalToConstant: 1),
+            
+            descriptionHeaderLabel.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 20),
+            descriptionHeaderLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            descriptionHeaderLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: descriptionHeaderLabel.bottomAnchor, constant: 12),
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
+            sizeHeaderLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            sizeHeaderLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            sizeHeaderLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
+            sizeCollectionView.topAnchor.constraint(equalTo: sizeHeaderLabel.bottomAnchor, constant: 12),
+            sizeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            sizeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            sizeCollectionView.heightAnchor.constraint(equalToConstant: 43),
+            
+            priceStackView.topAnchor.constraint(equalTo: sizeCollectionView.bottomAnchor, constant: 40),
+            priceStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            priceStackView.trailingAnchor.constraint(equalTo: buyButton.leadingAnchor, constant: -5),
+            
+            buyButton.centerYAnchor.constraint(equalTo: priceStackView.centerYAnchor),
+            buyButton.heightAnchor.constraint(equalToConstant: 62),
+            buyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            buyButton.widthAnchor.constraint(equalToConstant: view.frame.width / 1.7)
         ])
     }
 }
