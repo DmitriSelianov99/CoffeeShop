@@ -32,4 +32,12 @@ extension UIFont {
         return UIFont.init(name: "Sora-SemiBold", size: 18)
     }
     
+    static func soraSemiBold20() -> UIFont? {
+        return UIFont.init(name: "Sora-SemiBold", size: 20)
+    }
+    
+    static func soraSemiBold10() -> UIFont? {
+        return UIFont.init(name: "Sora-SemiBold", size: 10)
+    }
+    
 }

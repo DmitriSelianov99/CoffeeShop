@@ -22,6 +22,18 @@ class ProductsCollectionViewCell: UICollectionViewCell {
 
         return background
     }()
+    
+    private let starImageView: UIImageView = {
+        let star = UIImageView()
+        star.image = UIImage(named: "star")
+        star.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        star.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        star.translatesAutoresizingMaskIntoConstraints = false
+        return star
+    }()
+    
+    private let ratingLabel = CustomLabel(font: .soraSemiBold18()!, textColor: .white, text: "4.9")
+    private var ratingStackView = UIStackView()
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -82,6 +94,9 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         addSubview(configurationProductLabel)
         addSubview(priceLabel)
         addSubview(addButton)
+        
+        ratingStackView = UIStackView(arrangedSubviews: [starImageView, ratingLabel], axis: .horizontal, spacing: 2)
+        addSubview(ratingStackView)
     }
 }
 
@@ -97,6 +112,9 @@ extension ProductsCollectionViewCell {
             ratingBackgroundView.leadingAnchor.constraint(equalTo: productImageView.leadingAnchor),
 //            ratingBackgroundView.widthAnchor.constraint(equalToConstant: 51),
 //            ratingBackgroundView.heightAnchor.constraint(equalToConstant: 25),
+            
+            ratingStackView.centerYAnchor.constraint(equalTo: ratingBackgroundView.centerYAnchor),
+            ratingStackView.centerXAnchor.constraint(equalTo: ratingBackgroundView.centerXAnchor),
             
             categoryLabel.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 12),
             categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
