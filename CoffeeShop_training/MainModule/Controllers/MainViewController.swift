@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        setDelegates()
     }
     
     private func setupViews(){
@@ -35,7 +36,31 @@ class MainViewController: UIViewController {
         view.addSubview(categoryCollectionView)
         view.addSubview(productsCollectionView)
     }
+    
+    private func setDelegates(){
+        productsCollectionView.productsCollectionViewDelegate = self
+    }
 
+}
+
+//MARK: - EXTENSIONS
+extension MainViewController: ProductsCollectionViewCellProtocol {
+    func openDetailedInformation() {
+        print("detaildInfo")
+        let detailedInformation = DetailedInformationViewController()
+        detailedInformation.modalPresentationStyle = .fullScreen
+        present(detailedInformation, animated: true)
+    }
+    
+    
+}
+
+extension MainViewController: ProductsCollectionViewProtocol {
+    func testFunc() {
+        print("testFunc")
+    }
+    
+    
 }
 
 extension MainViewController {

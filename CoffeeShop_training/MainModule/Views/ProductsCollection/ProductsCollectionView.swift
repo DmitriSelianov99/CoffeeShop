@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ProductsCollectionViewProtocol: AnyObject {
+    func testFunc()
+}
+
 class ProductsCollectionView: UICollectionView {
+    
+    weak var productsCollectionViewDelegate: ProductsCollectionViewProtocol?
     
     private let collectionLayout = UICollectionViewFlowLayout()
     private let idCollection = "idCollection"
@@ -50,6 +56,7 @@ extension ProductsCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCollection, for: indexPath) as? ProductsCollectionViewCell
         else { return UICollectionViewCell() }
+        cell.productsCollectionViewCellDelegate = productsCollectionViewDelegate as? ProductsCollectionViewCellProtocol
         return cell
     }
     

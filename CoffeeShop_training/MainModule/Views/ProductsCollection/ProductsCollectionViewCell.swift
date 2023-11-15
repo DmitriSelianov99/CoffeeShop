@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ProductsCollectionViewCellProtocol: AnyObject {
+    func openDetailedInformation()
+}
+
 class ProductsCollectionViewCell: UICollectionViewCell {
+    
+    weak var productsCollectionViewCellDelegate: ProductsCollectionViewCellProtocol?
     
     private let ratingBackgroundView: UIView = {
         let background = UIView()
@@ -55,6 +61,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     private let productImageView: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(named: "cappucino")
+        
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -64,7 +71,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     private let priceLabel = CustomLabel(font: .soraSemiBold18()!, textColor: .specialGreen, text: "$ 4.53")
 
     
-    private let addButton: UIButton = {
+    private lazy var addButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .specialOrange
         btn.setImage(UIImage(named: "plus"), for: .normal)
@@ -78,6 +85,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         
         setupViews()
         setConstraints()
+        addGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -88,18 +96,32 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 16
         backgroundColor = .white
         
-        addSubview(productImageView)
+        contentView.addSubview(productImageView)
         addSubview(ratingBackgroundView)
         addSubview(categoryLabel)
         addSubview(configurationProductLabel)
         addSubview(priceLabel)
-        addSubview(addButton)
+        contentView.addSubview(addButton)
         
         ratingStackView = UIStackView(arrangedSubviews: [starImageView, ratingLabel], axis: .horizontal, spacing: 2)
         addSubview(ratingStackView)
     }
+    
+    public func addGesture(){
+        let tapImageView = UITapGestureRecognizer(target: self, action: #selector(getDetailedInformation))
+        tapImageView.cancelsTouchesInView = false
+        productImageView.isUserInteractionEnabled = true
+        productImageView.addGestureRecognizer(tapImageView)
+    }
+    
+//MARK: - objc
+    @objc private func getDetailedInformation(){
+        print("button cell")
+        productsCollectionViewCellDelegate?.openDetailedInformation()
+    }
 }
 
+//MARK: - EXTENSIONS
 extension ProductsCollectionViewCell {
     private func setConstraints(){
         NSLayoutConstraint.activate([

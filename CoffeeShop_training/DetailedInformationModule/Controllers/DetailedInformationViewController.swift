@@ -82,7 +82,7 @@ class DetailedInformationViewController: UIViewController {
     
 //MARK: - DESCRIPTION
     private let descriptionHeaderLabel = CustomLabel(font: .soraSemiBold16()!, textColor: .specialBlack, text: "Description")
-    private let descriptionLabel = CustomLabel(font: .soraRegular14()!, textColor: .specialGrey, text: "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo.. Read More")
+    private let descriptionLabel = CustomLabel(font: .soraRegular14()!, textColor: .specialGrey, text: "A cappuccino is an approximately 150 ml (5 oz) beverage, with 25 ml of espresso coffee and 85ml of fresh milk the fo...Read more")
     
 //MARK: - SIZE
     private let sizeHeaderLabel = CustomLabel(font: .soraSemiBold16()!, textColor: .specialBlack, text: "Size")
@@ -98,19 +98,20 @@ class DetailedInformationViewController: UIViewController {
         btn.layer.cornerRadius = 16
         btn.setAttributedTitle(NSAttributedString(
             string: "Buy Now",
-            attributes: [NSAttributedString.Key.foregroundColor : UIColor.white]),
+            attributes: [.foregroundColor : UIColor.white]),
                                for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
     
-
+//MARK: - SYSTEM FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
     
         setupViews()
         setConstraints()
+        addGesture()
     }
     
     private func setupViews(){
@@ -144,8 +145,21 @@ class DetailedInformationViewController: UIViewController {
         view.addSubview(buyButton)
                 
     }
+    
+//MARK: - FUNCTIONS
+    private func addGesture(){
+        let backButton = UITapGestureRecognizer(target: self, action: #selector(returnToMainVC))
+        backArrowImageView.isUserInteractionEnabled = true
+        backArrowImageView.addGestureRecognizer(backButton)
+    }
+    
+//MARK: - objc
+    @objc private func returnToMainVC(){
+        dismiss(animated: true)
+    }
 }
 
+//MARK: - EXTENSIONS
 extension DetailedInformationViewController {
     private func setConstraints(){
         NSLayoutConstraint.activate([
