@@ -9,10 +9,11 @@ import Foundation
 import RealmSwift
 
 class CoffeeModel: Object {
-    @Persisted(primaryKey: true) var coffeeId: ObjectId
-    @Persisted var coffeeType: String
+    @Persisted var coffeeId: Int
+    @Persisted var coffeeImage: Data?
+    @Persisted var coffeeType: CoffeeTypeModel?
     @Persisted var coffeeConfig: String
-    @Persisted var coffeePrice: Int
+    @Persisted var coffeePrice: Float
     @Persisted var coffeeRating: Float
     @Persisted var coffeeIsLiked: Bool
 }

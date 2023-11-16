@@ -13,11 +13,16 @@ class RealmManager {
         realm.objects(CoffeeModel.self)
     }
     
-    func getTappedCoffeeModel(id: ObjectId) -> Results<CoffeeModel> {
+    func getTappedCoffeeModel(id: Int) -> Results<CoffeeModel> {
         let coffee = realm.objects(CoffeeModel.self)
         let tappedCoffee = coffee.where {
             $0.coffeeId == id
         }
         return tappedCoffee
+    }
+    
+//MARK: - COFFEE TYPE
+    func getResultCoffeeTypeModel() -> Results<CoffeeTypeModel> {
+        realm.objects(CoffeeTypeModel.self)
     }
 }

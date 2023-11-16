@@ -12,6 +12,8 @@ class CategoryCollectionView: UICollectionView {
     private let collectionLayout = UICollectionViewFlowLayout()
     private let idCollectionCell = "idCollectionCell"
     
+    private var coffeeTypeArray = [CoffeeTypeModel]()
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: collectionLayout)
         
@@ -40,18 +42,22 @@ class CategoryCollectionView: UICollectionView {
         delegate = self
         dataSource = self
     }
+    
+    public func setCoffeeTypeArray(array: [CoffeeTypeModel]){
+        coffeeTypeArray = array
+    }
 }
 
 //MARK: - EXTENSIONS
 extension CategoryCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        coffeeTypeArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCollectionCell, for: indexPath) as? CategoryCollectionViewCell
         else { return UICollectionViewCell()}
-        
+        cell.configure(model: coffeeTypeArray[indexPath.row])
         return cell
     }
     

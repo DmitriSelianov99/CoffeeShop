@@ -14,6 +14,7 @@ protocol ProductsCollectionViewCellProtocol: AnyObject {
 class ProductsCollectionViewCell: UICollectionViewCell {
     
     weak var productsCollectionViewCellDelegate: ProductsCollectionViewCellProtocol?
+    private var coffeeModel = CoffeeModel()
     
     private let ratingBackgroundView: UIView = {
         let background = UIView()
@@ -104,6 +105,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(addButton)
         
         ratingStackView = UIStackView(arrangedSubviews: [starImageView, ratingLabel], axis: .horizontal, spacing: 2)
+        ratingStackView.distribution = .equalCentering
         addSubview(ratingStackView)
     }
     
@@ -112,6 +114,22 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         tapImageView.cancelsTouchesInView = false
         productImageView.isUserInteractionEnabled = true
         productImageView.addGestureRecognizer(tapImageView)
+    }
+    
+    public func configure(model: CoffeeModel){
+        coffeeModel = model
+        
+        guard let imageData = model.coffeeImage, let image = UIImage(data: imageData)
+        else { return }
+        productImageView.image = image.withRenderingMode(.alwaysOriginal)
+        
+        ratingLabel.text = "\(model.coffeeRating)"
+        
+        let typeString = model.coffeeType?.type ?? "Тип не определен"
+        categoryLabel.text = typeString
+        //categoryLabel.text = "\(model.coffeeType?.type)"
+        configurationProductLabel.text = model.coffeeConfig
+        priceLabel.text = "$ \(model.coffeePrice)"
     }
     
 //MARK: - objc
@@ -129,6 +147,7 @@ extension ProductsCollectionViewCell {
             productImageView.topAnchor.constraint(equalTo: topAnchor, constant: 4),
             productImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
             productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            productImageView.heightAnchor.constraint(equalToConstant: 132),
             
             ratingBackgroundView.topAnchor.constraint(equalTo: productImageView.topAnchor),
             ratingBackgroundView.leadingAnchor.constraint(equalTo: productImageView.leadingAnchor),

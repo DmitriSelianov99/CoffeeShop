@@ -18,6 +18,8 @@ class ProductsCollectionView: UICollectionView {
     private let collectionLayout = UICollectionViewFlowLayout()
     private let idCollection = "idCollection"
     
+    private var coffeeArray = [CoffeeModel]()
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: collectionLayout)
         
@@ -46,16 +48,25 @@ class ProductsCollectionView: UICollectionView {
         delegate = self
         dataSource = self
     }
+    
+    public func setCoffeeArray(array: [CoffeeModel]){
+        coffeeArray = array
+    }
+    
 }
 
+//MARK: - EXTENSIONS
 extension ProductsCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        8
+        coffeeArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCollection, for: indexPath) as? ProductsCollectionViewCell
         else { return UICollectionViewCell() }
+        
+        let coffeeModel = coffeeArray[indexPath.row]
+        cell.configure(model: coffeeModel)
         cell.productsCollectionViewCellDelegate = productsCollectionViewDelegate as? ProductsCollectionViewCellProtocol
         return cell
     }

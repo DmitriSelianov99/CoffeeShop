@@ -9,6 +9,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private var coffeeArray = [CoffeeModel]()
+    private var coffeeTypeArray = [CoffeeTypeModel]()
+    
     private let searchHeaderView = SearchHeaderView()
     private let menuBackgroundView: UIView = {
         let background = UIView()
@@ -23,6 +26,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getCoffeeArray()
+        getCoffeeTypeArray()
         
         setupViews()
         setConstraints()
@@ -39,6 +45,20 @@ class MainViewController: UIViewController {
     
     private func setDelegates(){
         productsCollectionView.productsCollectionViewDelegate = self
+    }
+    
+    private func getCoffeeArray(){
+        let array = RealmManager.shared.getResultCoffeeModel()
+        coffeeArray = array.map { $0 }
+        
+        productsCollectionView.setCoffeeArray(array: coffeeArray)
+    }
+    
+    private func getCoffeeTypeArray(){
+        let array = RealmManager.shared.getResultCoffeeTypeModel()
+        coffeeTypeArray = array.map { $0 }
+        
+        categoryCollectionView.setCoffeeTypeArray(array: coffeeTypeArray)
     }
 
 }

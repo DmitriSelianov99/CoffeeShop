@@ -9,6 +9,8 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
+    private var coffeeType = CoffeeTypeModel()
+    
     private let coffeeNameLabel: UILabel = {
         let label = UILabel()
         label.font = .soraRegular14()
@@ -49,6 +51,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 12
         backgroundColor = .white
         addSubview(coffeeNameLabel)
+    }
+    
+    public func configure(model: CoffeeTypeModel){
+        coffeeType = model
+        coffeeNameLabel.text = model.type
     }
 }
 
