@@ -27,8 +27,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCoffeeArray()
         getCoffeeTypeArray()
+        selectCategory(category: firstRunAppCategory())
         
         setupViews()
         setConstraints()
@@ -45,19 +45,28 @@ class MainViewController: UIViewController {
     
     private func setDelegates(){
         productsCollectionView.productsCollectionViewDelegate = self
+        categoryCollectionView.categoryDelegate = self
     }
     
-    private func getCoffeeArray(){
-        let array = RealmManager.shared.getResultCoffeeModel()
-        coffeeArray = array.map { $0 }
+    private func firstRunAppCategory() -> CoffeeTypeModel{
+        let array = RealmManager.shared.getResultCoffeeTypeModel()
+        let predicatedType = NSPredicate(format: "type = %@", "Cappucino")
+        let filteredArray = array.filter(predicatedType)
         
-        productsCollectionView.setCoffeeArray(array: coffeeArray)
+        return filteredArray[0]
+    }
+    
+    private func getCoffeeArray(type: CoffeeTypeModel){
+        let array = RealmManager.shared.getResultCoffeeModel()
+        let predicateCoffeeType = NSPredicate(format: "coffeeType.type = %@", type.type)
+        let filteredArray = array.filter(predicateCoffeeType)
+        
+        coffeeArray = filteredArray.map { $0 }
     }
     
     private func getCoffeeTypeArray(){
         let array = RealmManager.shared.getResultCoffeeTypeModel()
         coffeeTypeArray = array.map { $0 }
-        
         categoryCollectionView.setCoffeeTypeArray(array: coffeeTypeArray)
     }
 
@@ -65,9 +74,9 @@ class MainViewController: UIViewController {
 
 //MARK: - EXTENSIONS
 extension MainViewController: ProductsCollectionViewCellProtocol {
-    func openDetailedInformation() {
-        print("detaildInfo")
+    func openDetailedInformation(model: CoffeeModel) {
         let detailedInformation = DetailedInformationViewController()
+        detailedInformation.setModel(model: model)
         detailedInformation.modalPresentationStyle = .fullScreen
         present(detailedInformation, animated: true)
     }
@@ -78,6 +87,15 @@ extension MainViewController: ProductsCollectionViewCellProtocol {
 extension MainViewController: ProductsCollectionViewProtocol {
     func testFunc() {
         print("testFunc")
+    }
+}
+
+extension MainViewController: CategoryCollectionViewProtocol {
+    func selectCategory(category: CoffeeTypeModel) {
+        getCoffeeArray(type: category)
+        
+        productsCollectionView.setCoffeeArray(array: coffeeArray)
+        productsCollectionView.reloadData()
     }
     
     

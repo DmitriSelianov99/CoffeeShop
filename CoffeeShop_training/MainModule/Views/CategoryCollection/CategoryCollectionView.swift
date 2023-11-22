@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol CategoryCollectionViewProtocol: AnyObject {
+    func selectCategory(category: CoffeeTypeModel)
+}
+
 class CategoryCollectionView: UICollectionView {
     
     private let collectionLayout = UICollectionViewFlowLayout()
     private let idCollectionCell = "idCollectionCell"
     
     private var coffeeTypeArray = [CoffeeTypeModel]()
+    
+    weak var categoryDelegate: CategoryCollectionViewProtocol?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: collectionLayout)
@@ -58,6 +64,11 @@ extension CategoryCollectionView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCollectionCell, for: indexPath) as? CategoryCollectionViewCell
         else { return UICollectionViewCell()}
         cell.configure(model: coffeeTypeArray[indexPath.row])
+        
+        if indexPath.row == 0 {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
+        }
+        
         return cell
     }
     
@@ -66,7 +77,7 @@ extension CategoryCollectionView: UICollectionViewDataSource {
 
 extension CategoryCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        categoryDelegate?.selectCategory(category: coffeeTypeArray[indexPath.row])
     }
 }
 

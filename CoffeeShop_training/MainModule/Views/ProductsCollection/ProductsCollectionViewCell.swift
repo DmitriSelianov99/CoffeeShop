@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProductsCollectionViewCellProtocol: AnyObject {
-    func openDetailedInformation()
+    func openDetailedInformation(model: CoffeeModel)
 }
 
 class ProductsCollectionViewCell: UICollectionViewCell {
@@ -119,10 +119,6 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     public func configure(model: CoffeeModel){
         coffeeModel = model
         
-        guard let imageData = model.coffeeImage, let image = UIImage(data: imageData)
-        else { return }
-        productImageView.image = image.withRenderingMode(.alwaysOriginal)
-        
         ratingLabel.text = "\(model.coffeeRating)"
         
         let typeString = model.coffeeType?.type ?? "Тип не определен"
@@ -130,12 +126,16 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         //categoryLabel.text = "\(model.coffeeType?.type)"
         configurationProductLabel.text = model.coffeeConfig
         priceLabel.text = "$ \(model.coffeePrice)"
+        
+        guard let imageData = model.coffeeImage, let image = UIImage(data: imageData)
+        else { return }
+        productImageView.image = image.withRenderingMode(.alwaysOriginal)
     }
     
 //MARK: - objc
     @objc private func getDetailedInformation(){
         print("button cell")
-        productsCollectionViewCellDelegate?.openDetailedInformation()
+        productsCollectionViewCellDelegate?.openDetailedInformation(model: coffeeModel)
     }
 }
 

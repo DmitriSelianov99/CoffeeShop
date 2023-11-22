@@ -9,6 +9,8 @@ import UIKit
 
 class DetailedInformationViewController: UIViewController {
     
+    private var coffeeModel = CoffeeModel()
+    
 //MARK: - HEADER
     private let headerLabel = HeaderLabel(text: "Detail")
     private let backArrowImageView: UIImageView = {
@@ -19,7 +21,7 @@ class DetailedInformationViewController: UIViewController {
     }()
     private let likedImageView: UIImageView = {
         let like = UIImageView()
-        like.image = UIImage(named: "heart")?.withRenderingMode(.alwaysOriginal)
+        like.image = UIImage(named: "unliked")?.withRenderingMode(.alwaysOriginal)
         like.translatesAutoresizingMaskIntoConstraints = false
         return like
     }()
@@ -151,11 +153,45 @@ class DetailedInformationViewController: UIViewController {
         let backButton = UITapGestureRecognizer(target: self, action: #selector(returnToMainVC))
         backArrowImageView.isUserInteractionEnabled = true
         backArrowImageView.addGestureRecognizer(backButton)
+        
+        let likeButton = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        likedImageView.isUserInteractionEnabled = true
+        likedImageView.addGestureRecognizer(likeButton)
+    }
+    
+    public func setModel(model: CoffeeModel){
+        coffeeModel = model
+        
+        guard let imageData = model.coffeeImage, let image = UIImage(data: imageData) else { return }
+        photoImageView.image = image
+        
+        nameLabel.text = model.coffeeType?.type
+        configurationProductLabel.text = model.coffeeConfig
+        
+        ratingLabel.text = "\(model.coffeeRating)"
+        
+        totalPriceLabel.text = "$ \(model.coffeePrice)" 
+        
+        if model.coffeeIsLiked {
+            likedImageView.image = UIImage(named: "liked")
+        } else {
+            likedImageView.image = UIImage(named: "unliked")
+        }
     }
     
 //MARK: - objc
     @objc private func returnToMainVC(){
         dismiss(animated: true)
+    }
+    
+    @objc private func likeTapped(){
+        if !coffeeModel.coffeeIsLiked {
+            likedImageView.image = UIImage(named: "liked")
+            RealmManager.shared.likeTappedCoffeeModel(model: coffeeModel)
+        } else {
+            likedImageView.image = UIImage(named: "unliked")
+            RealmManager.shared.likeTappedCoffeeModel(model: coffeeModel)
+        }
     }
 }
 

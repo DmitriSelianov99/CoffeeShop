@@ -27,4 +27,8 @@ extension UIColor {
     static let specialCizeColor = #colorLiteral(red: 1, green: 0.9687270522, blue: 0.9466684461, alpha: 1) //FFF5EE
     
     static let specialBorder = #colorLiteral(red: 0.895850122, green: 0.895850122, blue: 0.895850122, alpha: 1) //DEDEDE
+    
+    static let specialTabBar = #colorLiteral(red: 0.9562537074, green: 0.9562535882, blue: 0.9562537074, alpha: 1) //F1F1F1
+    
+    static let specialUnselectedItem = #colorLiteral(red: 0.6214905381, green: 0.6214904785, blue: 0.6214904785, alpha: 1) //8D8D8D
 }

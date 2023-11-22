@@ -21,8 +21,21 @@ class RealmManager {
         return tappedCoffee
     }
     
+    func likeTappedCoffeeModel(model: CoffeeModel) {
+        try! realm.write {
+            model.coffeeIsLiked = !model.coffeeIsLiked
+        }
+    }
+    
+    func deleteLikeCoffeeModel(model: CoffeeModel){
+        try! realm.write {
+            model.coffeeIsLiked = false
+        }
+    }
+    
 //MARK: - COFFEE TYPE
     func getResultCoffeeTypeModel() -> Results<CoffeeTypeModel> {
         realm.objects(CoffeeTypeModel.self)
     }
+    
 }
