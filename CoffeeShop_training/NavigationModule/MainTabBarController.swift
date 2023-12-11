@@ -27,7 +27,7 @@ class MainTabBarController: UITabBarController {
     private func setupItems(){
         let mainVC = MainViewController()
         let likedVC = LikedViewController()
-        let basketVC = MainViewController()
+        let basketVC = OrderViewController()
         let notificationVC = MainViewController()
         
         setViewControllers([mainVC, likedVC, basketVC, notificationVC], animated: true)
@@ -45,5 +45,6 @@ class MainTabBarController: UITabBarController {
 }
 
 extension MainTabBarController: UITabBarControllerDelegate {
-    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    }
 }

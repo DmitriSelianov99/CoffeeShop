@@ -38,4 +38,15 @@ class RealmManager {
         realm.objects(CoffeeTypeModel.self)
     }
     
+//MARK: - ORDER
+    func addCoffeeToOrder(model: OrderModel) {
+        try! realm.write {
+            realm.add(model)
+        }
+    }
+    
+    func getOrderModel() -> Results<OrderModel> {
+        realm.objects(OrderModel.self)
+    }
+    
 }

@@ -74,6 +74,16 @@ class MainViewController: UIViewController {
 
 //MARK: - EXTENSIONS
 extension MainViewController: ProductsCollectionViewCellProtocol {
+    func addToOrder(model: CoffeeModel) {
+        let orderModel = OrderModel()
+        orderModel.coffeeId = model.coffeeId
+        orderModel.coffeeImage = model.coffeeImage
+        orderModel.coffeeType = model.coffeeType
+        orderModel.coffeeConfig = model.coffeeConfig
+        orderModel.coffeePrice = model.coffeePrice
+        RealmManager.shared.addCoffeeToOrder(model: orderModel)
+    }
+    
     func openDetailedInformation(model: CoffeeModel) {
         let detailedInformation = DetailedInformationViewController()
         detailedInformation.setModel(model: model)

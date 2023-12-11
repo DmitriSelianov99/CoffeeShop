@@ -59,17 +59,14 @@ extension LikedTableView: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    //UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         94
     }
     
-    //UITableViewDelegate
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "") { [weak self] _, _, _ in
             guard let self = self else { return }
-            
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: LikedTableViewCell.idCell, for: indexPath) as? LikedTableViewCell
-//            else { return }
             self.likedDelegate?.deleteLikedCoffee(model: likedArray[indexPath.row])
             
         }

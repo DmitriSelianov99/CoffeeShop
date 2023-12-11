@@ -31,4 +31,6 @@ extension UIColor {
     static let specialTabBar = #colorLiteral(red: 0.9562537074, green: 0.9562535882, blue: 0.9562537074, alpha: 1) //F1F1F1
     
     static let specialUnselectedItem = #colorLiteral(red: 0.6214905381, green: 0.6214904785, blue: 0.6214904785, alpha: 1) //8D8D8D
+    
+    static let specialSepartor = #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1) //EAEAEA
 }

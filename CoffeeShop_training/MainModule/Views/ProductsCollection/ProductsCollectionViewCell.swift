@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProductsCollectionViewCellProtocol: AnyObject {
     func openDetailedInformation(model: CoffeeModel)
+    func addToOrder(model: CoffeeModel)
 }
 
 class ProductsCollectionViewCell: UICollectionViewCell {
@@ -77,6 +78,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         btn.backgroundColor = .specialOrange
         btn.setImage(UIImage(named: "plus"), for: .normal)
         btn.layer.cornerRadius = 10
+        btn.addTarget(self, action: #selector(addCoffeeToOrder), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -136,6 +138,10 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     @objc private func getDetailedInformation(){
         print("button cell")
         productsCollectionViewCellDelegate?.openDetailedInformation(model: coffeeModel)
+    }
+    
+    @objc private func addCoffeeToOrder(){
+        productsCollectionViewCellDelegate?.addToOrder(model: coffeeModel)
     }
 }
 
