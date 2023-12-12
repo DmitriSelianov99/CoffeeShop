@@ -28,7 +28,7 @@ class MainTabBarController: UITabBarController {
         let mainVC = MainViewController()
         let likedVC = LikedViewController()
         let basketVC = OrderViewController()
-        let notificationVC = MainViewController()
+        let notificationVC = DeliveryViewController()
         
         setViewControllers([mainVC, likedVC, basketVC, notificationVC], animated: true)
         

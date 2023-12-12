@@ -101,9 +101,10 @@ class PaymentView: UIView {
     
     //MARK: - FUNCTIONS
     public func setTotalPrice(price: Float){
-        priceLabel.text = "$ \(price)"
-        totalPaymentLabel.text = "$ \(price + 1.0)"
-        sumLabel.text = "$ \(price + 1.0)"
+        let roundedPrice = round(price * 100) / 100.0
+        priceLabel.text = "$ \(roundedPrice)"
+        totalPaymentLabel.text = "$ \(roundedPrice + 1.0)"
+        sumLabel.text = "$ \(roundedPrice + 1.0)"
     }
 }
 
