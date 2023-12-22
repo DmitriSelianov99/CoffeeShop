@@ -11,7 +11,6 @@
 		34362B322B13ACB100968FAB /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34362B312B13ACB100968FAB /* AddressView.swift */; };
 		34362B342B13E41800968FAB /* OrderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34362B332B13E41800968FAB /* OrderTableView.swift */; };
 		34362B362B13E59500968FAB /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34362B352B13E59500968FAB /* OrderTableViewCell.swift */; };
-		34480B4E2B2868B300792D0A /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34480B4D2B2868B300792D0A /* DeliveryViewController.swift */; };
 		345E4B622B21D48500DEE094 /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E4B612B21D48500DEE094 /* Separator.swift */; };
 		345E4B642B21E43400DEE094 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E4B632B21E43400DEE094 /* CouponView.swift */; };
 		346602DB2B0E60E700D95118 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346602DA2B0E60E700D95118 /* OrderViewController.swift */; };
@@ -27,6 +26,8 @@
 		349D30DA2B037A8700672005 /* SizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D30D92B037A8700672005 /* SizeCollectionViewCell.swift */; };
 		34A8DBFA2B276E6700AA0093 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A8DBF92B276E6700AA0093 /* OrderModel.swift */; };
 		34B2C97B2B062696005FF2CC /* CoffeeTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B2C97A2B062696005FF2CC /* CoffeeTypeModel.swift */; };
+		34B6909C2B2AD4B400AF6586 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6909B2B2AD4B400AF6586 /* DeliveryViewController.swift */; };
+		34B6909E2B2ADCD200AF6586 /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6909D2B2ADCD200AF6586 /* DeliveryView.swift */; };
 		34BB7C802B04CAE9005CA47F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 34BB7C7F2B04CAE9005CA47F /* Realm */; };
 		34BB7C822B04CAE9005CA47F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 34BB7C812B04CAE9005CA47F /* RealmSwift */; };
 		34BB7C852B04CE70005CA47F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB7C842B04CE70005CA47F /* RealmManager.swift */; };
@@ -53,7 +54,6 @@
 		34362B312B13ACB100968FAB /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		34362B332B13E41800968FAB /* OrderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableView.swift; sourceTree = "<group>"; };
 		34362B352B13E59500968FAB /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
-		34480B4D2B2868B300792D0A /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		345E4B612B21D48500DEE094 /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		345E4B632B21E43400DEE094 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 		346602DA2B0E60E700D95118 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		349D30D92B037A8700672005 /* SizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		34A8DBF92B276E6700AA0093 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		34B2C97A2B062696005FF2CC /* CoffeeTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeTypeModel.swift; sourceTree = "<group>"; };
+		34B6909B2B2AD4B400AF6586 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
+		34B6909D2B2ADCD200AF6586 /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
 		34BB7C842B04CE70005CA47F /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		34BB7C872B04D0DC005CA47F /* CoffeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModel.swift; sourceTree = "<group>"; };
 		34C873E62B0D047000252B8A /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 		34480B4B2B28689700792D0A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				34480B4D2B2868B300792D0A /* DeliveryViewController.swift */,
+				34B6909B2B2AD4B400AF6586 /* DeliveryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,6 +125,7 @@
 		34480B4C2B28689F00792D0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34B6909D2B2ADCD200AF6586 /* DeliveryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,7 +454,6 @@
 				34CC41832AFCF40E003CA912 /* UIStackView + Extensions.swift in Sources */,
 				34911E542AFE2BC600351BF8 /* ProductsCollectionView.swift in Sources */,
 				34BB7C882B04D0DC005CA47F /* CoffeeModel.swift in Sources */,
-				34480B4E2B2868B300792D0A /* DeliveryViewController.swift in Sources */,
 				34C873E72B0D047000252B8A /* LikedViewController.swift in Sources */,
 				34362B342B13E41800968FAB /* OrderTableView.swift in Sources */,
 				345E4B622B21D48500DEE094 /* Separator.swift in Sources */,
@@ -464,12 +466,14 @@
 				34362B322B13ACB100968FAB /* AddressView.swift in Sources */,
 				349D30D42B034A0100672005 /* DetailedInformationViewController.swift in Sources */,
 				340D785F2B245FBC00B42003 /* PaymentView.swift in Sources */,
+				34B6909E2B2ADCD200AF6586 /* DeliveryView.swift in Sources */,
 				349D30DA2B037A8700672005 /* SizeCollectionViewCell.swift in Sources */,
 				34911E592AFE471700351BF8 /* CustomLabel.swift in Sources */,
 				34B2C97B2B062696005FF2CC /* CoffeeTypeModel.swift in Sources */,
 				34BB7C852B04CE70005CA47F /* RealmManager.swift in Sources */,
 				34A8DBFA2B276E6700AA0093 /* OrderModel.swift in Sources */,
 				349D30D82B037A7000672005 /* SizeCollectionView.swift in Sources */,
+				34B6909C2B2AD4B400AF6586 /* DeliveryViewController.swift in Sources */,
 				34CC41812AFCE615003CA912 /* UIColor + Extensions.swift in Sources */,
 				34CC41602AFCBB28003CA912 /* SceneDelegate.swift in Sources */,
 				346602DB2B0E60E700D95118 /* OrderViewController.swift in Sources */,

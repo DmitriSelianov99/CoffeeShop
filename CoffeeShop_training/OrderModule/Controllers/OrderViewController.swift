@@ -32,6 +32,12 @@ class OrderViewController: UIViewController {
     }()
     
     
+    private let backArrowImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "arrow-left")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     private let headerLabel = HeaderLabel(text: "Order")
     
     private lazy var segmentedControl: UISegmentedControl = {
@@ -78,6 +84,7 @@ class OrderViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegates()
+        addGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +108,7 @@ class OrderViewController: UIViewController {
         scrollView.addSubview(contentView)
         
         view.addSubview(headerLabel)
+        view.addSubview(backArrowImageView)
         view.addSubview(segmentedControl)
         contentView.addSubview(addressView)
         contentView.addSubview(orderTableView)
@@ -160,11 +168,22 @@ class OrderViewController: UIViewController {
         }
     }
     
-    
+    private func addGesture(){
+        let backArrowGesture = UITapGestureRecognizer(target: self, action: #selector(backArrowTapped))
+        backArrowImageView.isUserInteractionEnabled = true
+        backArrowImageView.addGestureRecognizer(backArrowGesture)
+    }
     
 //MARK: - objc
     @objc private func segmentChange(){
         print("change")
+    }
+    
+    @objc private func backArrowTapped(){
+//        let mainVC = MainViewController()
+//        mainVC.modalPresentationStyle = .automatic
+//        present(mainVC, animated: true)
+//        dismiss(animated: true)
     }
 }
 
@@ -198,6 +217,11 @@ extension OrderViewController {
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1),
+            
+            backArrowImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            backArrowImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            backArrowImageView.heightAnchor.constraint(equalToConstant: 24),
+            backArrowImageView.widthAnchor.constraint(equalToConstant: 24),
             
             headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             headerLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),

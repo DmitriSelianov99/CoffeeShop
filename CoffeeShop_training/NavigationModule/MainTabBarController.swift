@@ -14,6 +14,7 @@ class MainTabBarController: UITabBarController {
 
         setupTabBar()
         setupItems()
+        delegate = self
     }
     
 
@@ -22,6 +23,7 @@ class MainTabBarController: UITabBarController {
         tabBar.tintColor = .specialOrange
         tabBar.unselectedItemTintColor = .specialUnselectedItem
         tabBar.layer.cornerRadius = 24
+        tabBar.frame.size.height = 99
     }
     
     private func setupItems(){
@@ -33,7 +35,6 @@ class MainTabBarController: UITabBarController {
         setViewControllers([mainVC, likedVC, basketVC, notificationVC], animated: true)
         
         guard let items = tabBar.items else { return }
-        
         items[0].image = UIImage(named: "home")
         items[1].image = UIImage(named: "heart")
         items[2].image = UIImage(named: "bag")
@@ -45,6 +46,12 @@ class MainTabBarController: UITabBarController {
 }
 
 extension MainTabBarController: UITabBarControllerDelegate {
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController is OrderViewController || viewController is DeliveryViewController {
+            tabBar.isHidden = true
+        } else {
+            tabBar.isHidden = false
+        }
+        return true
     }
 }

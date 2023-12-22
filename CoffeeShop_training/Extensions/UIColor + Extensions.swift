@@ -33,4 +33,6 @@ extension UIColor {
     static let specialUnselectedItem = #colorLiteral(red: 0.6214905381, green: 0.6214904785, blue: 0.6214904785, alpha: 1) //8D8D8D
     
     static let specialSepartor = #colorLiteral(red: 0.9176470588, green: 0.9176470588, blue: 0.9176470588, alpha: 1) //EAEAEA
+    
+    static let specialLightGreen = #colorLiteral(red: 0.2404918969, green: 0.7852804661, blue: 0.5666991472, alpha: 1)
 }
